@@ -1,0 +1,14 @@
+"""Plugin To Directly Redirect Me To Moi Songs Channel ASAP 
+.moisongs"""
+
+from telebot.utils import admin_cmd
+
+
+@telebot.on(admin_cmd(outgoing=True, pattern="moisongs"))
+async def join(e):
+
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+
+        await e.edit(
+            "He He [Songs](https://t.me/MoiSongs) Time 🎵🎧
+        )
